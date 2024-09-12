@@ -1,0 +1,498 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-image: url('abstract.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+/* Header Section */
+header {
+  background: linear-gradient(135deg, #945a8a, #6ab1d7); /* Gradient background */
+  padding: 15px 0; /* Increased padding for better spacing */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px; /* Larger logo size for better visibility */
+  font-weight: bold;
+  letter-spacing: 1px; /* Slight letter spacing for a modern look */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px; /* Spacing between navigation links */
+}
+
+.nav-links a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px; /* Rounded corners for the links */
+  transition: background 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2); /* Light background on hover */
+  color: #fff; /* Keep text color white */
+}
+
+.menu-toggle {
+  display: none; /* Hidden by default, shown on mobile */
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Position below the header */
+    left: 0;
+    background: #945a8a; /* Background color for the dropdown */
+  }
+
+  .nav-links.active {
+    display: flex; /* Show links when menu is active */
+  }
+
+  .menu-toggle {
+    display: block; /* Show menu toggle on mobile */
+  }
+
+  .nav-links a {
+    padding: 15px; /* Larger padding for mobile links */
+    text-align: center;
+  }
+}
+
+#hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  color: #000000;
+  padding: 0 20px;
+}
+ /* Hero Image Frame */
+.hero-image {
+  display: flex;
+  justify-content: flex-end; /* Align the image frame to the right */
+  padding: 0;
+  align-items: flex-start; /* Aligns the image to the top of the container */
+  min-height: 0;
+}
+
+/* Image frame styling */
+.image-frame {
+  display: inline-block; /* Frame adjusts to the image size */
+  width: auto;
+  max-width: 45%;
+  margin-left: -5px;
+  margin-top: -1px;
+  perspective: 1000px; /* Enables 3D space for the flip effect */
+}
+
+.image-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  transition: transform 0.6s ease-in-out; /* Smooth flip animation */
+  transform-style: preserve-3d; /* Ensures 3D transform is applied */
+  backface-visibility: hidden; /* Hides the back of the image when flipped */
+}
+
+.image-frame:hover img {
+  transform: rotateY(360deg); /* Flip the image on hover */
+}
+
+/* Optional: Add a back image for the flipped side */
+.image-frame img::after {
+  content: ''; /* You can add an actual image or background here */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333; /* This can be an image or a different color */
+  border-radius: 5px;
+  backface-visibility: hidden; /* Ensures back is hidden until flipped */
+  transform: rotateY(180deg); /* Back is rotated for proper 3D flip */
+}
+
+
+
+.hero-content {
+  max-width: 50%;
+  margin: 0 auto; /* Centers the content horizontally */
+  text-align: center; /* Centers the text inside the container */
+  padding-top: 50px; /* Moves the text down */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;  
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Optional: Center the button as well */
+.hero-content .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f06d6d;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+
+
+.btn {
+  background: linear-gradient(45deg, #d154bc, #555); /* Gradient background from dark to light gray */
+  color: #fff;
+  padding: 12px 24px; /* Slightly larger padding for better click area */
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and scaling */
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, #be6565, #b9af56); /* Lighter gradient on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.btn:active {
+  background: linear-gradient(45deg, #478666, #6e4fa1); /* Darker gradient when button is pressed */
+  transform: scale(0.98); /* Slightly shrink the button */
+}
+
+
+
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#about {
+  background: linear-gradient(#fff); 
+  text-align: center;
+}
+
+#projects .projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+#projects h2 {
+  text-align: center; /* Center-align the text */
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #333; /* Dark gray for the heading */
+}
+
+
+.project {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+#contact {
+  background: linear-gradient(#fff); 
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px; /* Adjusted padding for more space */
+}
+
+.contact-info {
+  margin-bottom: 30px;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.contact-info a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+
+footer {
+  background: linear-gradient(135deg, #333,#6a0dad,#00d1a1);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  #projects .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+#education {
+  padding: 50px 20px;
+  background: linear-gradient(#fff); 
+}
+
+#education h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  color: #2c3e50; /* Darker shade of blue for contrast */
+}
+
+.education-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.education-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for depth */
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
+}
+
+.education-item:hover {
+  transform: translateY(-10px); /* Lift the item on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  background: linear-gradient(135deg, #4c9171,#e6a25a,#ad9731);
+}
+
+.education-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #34495e; /* Darker blue for headings */
+}
+
+.education-item p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #7f8c8d; /* Lighter gray-blue for paragraph text */
+}
+
+.education-item:hover h3 {
+  color: #2980b9; /* Change heading color on hover */
+}
+
+.education-item:hover p {
+  color: #a7166b; /* Change paragraph text color on hover for a fresh look */
+}
+
+@media (max-width: 768px) {
+  .education-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* Skills Section */
+#skills {
+  padding: 60px 20px;
+  background: linear-gradient(#fff); /* White background for the section */
+}
+
+#skills h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #333; /* Dark gray for the heading */
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Skill Item Styling */
+.skill-item {
+  background-color: #fff; /* White background for the skill items */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s; /* Smooth transition for hover effects */
+  width: 150px; /* Fixed width for consistency */
+  position: relative; /* Position relative to apply pseudo-element border */
+  overflow: hidden; /* Ensure border effect does not overflow */
+}
+
+/* Hover Effect with Gradient Border */
+.skill-item:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.skill-item::before {
+  content: ''; /* No content, just for the border effect */
+  position: absolute;
+  top: -5px; /* Position above the item */
+  left: -5px; /* Position to the left of the item */
+  width: calc(100% + 10px); /* Extend beyond the item */
+  height: calc(100% + 10px); /* Extend beyond the item */
+  border-radius: 15px; /* Slightly larger radius to match the item */
+  border: 3px solid transparent; /* Transparent border to avoid color clash */
+  background: linear-gradient(45deg, #9ab635, #3a519e); /* Gradient effect */
+  z-index: -1; /* Place behind the item */
+  transition: opacity 0.3s; /* Smooth transition for border effect */
+  opacity: 0; /* Initially invisible */
+}
+
+.skill-item:hover::before {
+  opacity: 1; /* Show gradient border on hover */
+}
+
+.skill-item img {
+  width: 60px; /* Adjust size as needed */
+  margin-bottom: 10px;
+}
+
+.skill-item p {
+  font-size: 1rem;
+  color: #555; /* Dark gray for text */
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* Certifications Section */
+#certifications {
+  padding: 60px 20px;
+  background: linear-gradient(#fff); 
+}
+
+#certifications h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.certifications-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Certification Item Styling */
+.certification-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Add transition for background */
+  max-width: 250px; /* Adjust size as needed */
+}
+
+.certification-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.certification-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Hover Effect */
+.certification-item:hover {
+  transform: translateY(-10px); /* Lift the item on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  background: linear-gradient(135deg, #cfc648, #53b933); /* Gradient background on hover */
+  color: #fff; /* Text color change for better contrast */
+}
+
+.certification-item:hover h3,
+.certification-item:hover p {
+  color: #fff; /* Ensure text color is readable on the gradient background */
+}
+
+@media (max-width: 768px) {
+  .certifications-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
